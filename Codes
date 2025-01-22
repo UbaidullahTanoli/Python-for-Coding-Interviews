@@ -1,0 +1,10 @@
+# Append vs Extend
+
+X = [1, 2, 3]
+Y = [4, 5]
+
+X.append(Y) 
+[1, 2, 3, [4, 5]]
+
+X.extend(Y)
+[1, 2, 3, 4, 5]
