@@ -1,0 +1,42 @@
+To count the frequency / occurances of each element in a list, Pyhton gives us three methods, in the ascending order of simplicity:
+
+Using a dictionay
+Uisng defaultdict (from collections import defaultdict)
+Using Counter (from collections import counter) and update
+
+Let's use each of them on a simple example: List = [1, 2, 3, 1, 1, 2, 4]
+
+# Using a dictionary
+
+mydict = {}
+for i in List:
+  if i in mydict:
+    mydict[i] += 1
+  else:
+    mydict[i] = 1
+return mydict 
+
+# Using a defaultdict
+
+We don't need to check if an element is present in our dictionary or List. 
+  
+from collections import defaultdict
+mydict = defaultdict(int)
+for i in List:
+  mydict[i] += 1
+return mydict
+# Using Counter
+
+Doesn't give error even if we write Counter[100]+=1 even though 100 isn't in the List
+  
+from collections import Counter
+return Counter(List)
+
+if we are counting the occurances in multiple Lists, we use update method
+
+List1 = [1, 2, 3, 3]
+List2 = [1, 2, 4]
+
+count = Counter(List1)
+count.update(List2)
+  return count
